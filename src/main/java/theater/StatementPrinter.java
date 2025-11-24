@@ -8,8 +8,8 @@ import java.util.Map;
  * This class generates a statement for a given invoice of performances.
  */
 public class StatementPrinter {
-    private Invoice invoice;
     private static Map<String, Play> plays;
+    private Invoice invoice;
 
     public StatementPrinter(Invoice invoice, Map<String, Play> plays) {
         this.invoice = invoice;
@@ -70,12 +70,12 @@ public class StatementPrinter {
         // add extra credit for every five comedy attendees
         if ("comedy".equals(getPlay(performance).getType())) {
             result += performance.getAudience() / Constants.COMEDY_EXTRA_VOLUME_FACTOR;
-            }
+        }
         return result;
     }
 
-    private static Play getPlay(Performance p) {
-        return plays.get(p.getPlayID());
+    private static Play getPlay(Performance performance) {
+        return plays.get(performance.getPlayID());
     }
 
     private static int getAmount(Performance performance) {
