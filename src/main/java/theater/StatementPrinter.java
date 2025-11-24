@@ -84,9 +84,9 @@ public class StatementPrinter {
             case "tragedy":
                 result = Constants.TRAGEDY_BASE_AMOUNT;
                 if (performance.getAudience() > Constants.TRAGEDY_AUDIENCE_THRESHOLD) {
-                        result += Constants.HISTORY_OVER_BASE_CAPACITY_PER_PERSON
-                                * (performance.getAudience()
-                                - Constants.TRAGEDY_AUDIENCE_THRESHOLD);
+                    result += Constants.HISTORY_OVER_BASE_CAPACITY_PER_PERSON
+                            * (performance.getAudience()
+                            - Constants.TRAGEDY_AUDIENCE_THRESHOLD);
                 }
                 break;
             case "comedy":
